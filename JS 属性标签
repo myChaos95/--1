@@ -1,0 +1,18 @@
+var me = new Object();
+
+Object.defineProperty(me,'name',{value:'chaos',configurable:true,writable:true,enumerable:true})
+
+Object.defineProperties(me,{
+	'age':{value:22,configurable:true,writable:true,enumerable:true},
+	'love':{value:"beauty",configurable:true,writable:true,enumerable:true}
+})
+
+Object.getOwnPropertyDescriptor(me,'love');
+
+Object.keys(me)
+
+Object.isExtensible(me)    //  Object.preventExtensions(me)
+
+Object.isSealed(me)        //  Object.seal(me)
+
+Object.isFrozen(me)        //  Object.freeze(me)
