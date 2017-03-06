@@ -1,0 +1,58 @@
+<!---------------------------私有变量---------------------------->
+
+function Person(name,age){    //  隐藏那些不能直接修改的数据  
+  this.getMessage = function(){
+    return name + age;
+  }
+  
+  this.setMessage = function(n,a){    //  能访问私有变量的特权方法
+    name = n;
+    age = a;
+  }
+  
+}
+
+
+<!---------------------------模块模式----------------------------->
+
+var $ = {   //  简单的单例模式
+  description:"Test",
+  getDes:function(){
+    return this.description;
+  }
+  
+};
+
+var $_up = function(){    //  加强版
+  var description = "Test",   //  私有变量和函数
+      age = 22;
+      
+  function grow(){
+    age++;
+  }
+  
+  return {    //  特权/共有方法和属性
+    name:'zhou',
+    getMessage:function(){
+      return description + age;
+    },
+    older:grow
+  }
+  
+}();
+
+var $_special = function(){   //  适用于要求此单例必须是某种类型的实例（此处是CustomType）
+  var description = "Test",   //  私有变量和函数
+      age = 22;
+      
+  function grow(){
+    age++;
+  }
+  
+  var o = new CustomType();   //  创建对象
+  o.getMessage = function(){  //  添加特权方法
+    return description + age;
+  }
+  return o;
+  
+}(); 
