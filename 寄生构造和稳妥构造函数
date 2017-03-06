@@ -1,0 +1,31 @@
+<!--------------------------寄生构造函数--------------------------->
+
+function Person(name,age){   //  每个实例独有的属性和方法在构造函数中定义
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype = {   //  所有实力共享的属性和方法在原型中定义
+  constructor:Person,
+  sex:"male",
+  getMessage:function(){
+    return this.name + this.age + this.sex;
+  }
+}
+
+var p = new Person("chaos",22);
+
+
+<!--------------------------稳妥构造函数--------------------------->
+
+function Security(name,age){    //  没有公共属性，方法也不引用this对象，适用于安全环境中
+  name = name;
+  age = age;
+  var o = new Object();   //  创建要返回的对象
+  o.getMessage = function(){
+    return name + age;
+  }
+  return o;
+}
+
+var s = Security('chaos',22);   //  不需要使用new 操作符调用构造函数
