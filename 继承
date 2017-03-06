@@ -1,0 +1,30 @@
+<!---------------------------------------------------------->
+function My_Inherit(sub,sup){   //  用于实现继承的函数(sub.prototype = sup.prototype)
+  var prototype = sup.prototype;
+  prototype.constructor = sub;
+  sub.prototype = prototype;
+}
+
+function Sup(name,age){   //  寄生构造函数
+  this.name = name;
+  this.age = age;
+}
+
+Sup.prototype = {
+  constructor:Sup,
+  love:'beauty',
+  getMessage:function(){
+    return this.name + this.age
+  }
+}
+
+function Sub(name,age,sex){
+  Sup.call(this,name,age);    //  调用Sup的构造函数
+  this.sex = sex;
+}
+
+My_Inherit(Sub,Sup);
+
+Sub.prototype.talk = function(){   //  子类原型添加新方法
+  return this.name + this.age + this.sex;
+}
