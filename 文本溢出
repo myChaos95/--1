@@ -1,0 +1,28 @@
+http://www.daqianduan.com/6179.html
+
+1.  单行文本溢出
+
+{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+2.  多行文本溢出      //  父容器不能有高度
+
+{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  -webkit-line-clamp:2;   //  用于决定在第几行实现溢出
+}
+
+3.  多行文本溢出hack
+
+p{position: relative; line-height: 20px; max-height: 40px;overflow: hidden;word-break:break-all;}
+p::after{content: "..."; position: absolute; bottom: 0; right: 0; padding-left: 40px;
+background: -webkit-linear-gradient(left, transparent, #fff 55%);
+background: -o-linear-gradient(right, transparent, #fff 55%);
+background: -moz-linear-gradient(right, transparent, #fff 55%);
+background: linear-gradient(to right, transparent, #fff 55%);
+}
