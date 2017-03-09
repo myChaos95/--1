@@ -27,5 +27,8 @@
   (2) 获取相对父元素位置
       //  JQ
       $(selector).position().top + $(selector).position().left 
+  (3) 获取设置滚动条偏移
+      $(selector).scrollLeft(value)
+      $(selector).scrollTop(value)
       
       
