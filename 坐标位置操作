@@ -1,0 +1,31 @@
+1.  获取鼠标位置
+
+ clientX + clientY : 获取客户区坐标位置
+ pageX + pageY :  获取页面坐标位置  (pageX >= clientX)
+ IE8 及更早版本不支持对象上的页面坐标(page)
+ 
+ // page - JS
+    e = e || event;
+    var pageX = e.pageX,
+        pageY = e.pageY;
+    if(pageX == undefined){
+      pageX = e.clientX + (document.body.scrollLeft || docyment.documentElement.scrollLeft);
+    }
+    if(pageY == undefined){
+      pageY = e.clientY + (document.body.scrollTop || docyment.documentElement.scrollTop);
+    }
+ 
+ // page - JQ
+    e.pageX + e.pageY
+    
+2.  获取元素位置
+
+ （1）获取绝对位置
+      //  JQ
+      $(selector).offset().top + $(selector).offset().left
+      $(selector).offset({top:100,left:100}); //  设定位置
+  (2) 获取相对父元素位置
+      //  JQ
+      $(selector).position().top + $(selector).position().left 
+      
+      
