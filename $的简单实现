@@ -1,26 +1,22 @@
-    var $ = function (sel) {    //  返回的是Node节点类型，所以对Node原型进行方法的拓展
-      var nodes = document.querySelectorAll(sel);
-      return nodes.length == 1 ? nodes[0] : nodes;
+    var $ = function (sel) {        //  返回的是NodeList对象
+      return document.querySelectorAll(sel);
     }
-    
-    Node.prototype.on = function(type,fuc){
-        if(this.addEventListener){
-            this.addEventListener(type,fuc,false);
-        }else if(this.attachEvent){
-            this.attachEvent('on' + type,fuc);
-        }else{
-            this['on' + type] = fuc;
+    NodeList.prototype.on = function(type,fuc){
+        for(var i = 0, len = this.length; i < len; i++){
+            addEvent(this[i],type,fuc);
         }
     }
-         
-    Node.prototype.attr = function(json,setV){
-      if(typeof json == 'string' && setV == undefined){
-          return this.getAttribute(json);
-      }else if(typeof json == 'string' && typeof setV == 'string'){
-          this.setAttribute(json,setV);
-      }else if(typeof json == 'object' && setV == undefined){
-          for(var i in json){
-              this.setAttribute(i,json[i]);
-          }
-      }
+
+    function addEvent(obj,type,fuc){
+        if(obj.addEventListener){
+            obj.addEventListener(type,fuc,false);
+        }else if(obj.attachEvent){
+            obj.attachEvent('on' + type,fuc);
+        }else{
+            obj['on' + type] = fuc;
+        }
+    }
+
+    function getType(obj){
+        return  Object.prototype.toString.call(obj).slice(8,-1);
     }
