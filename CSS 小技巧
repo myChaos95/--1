@@ -103,3 +103,8 @@ style{
 			border-radius: 50%;
 		}
 	</style>
+<--------------------------------6.  头图布局和正方形----------------------------->
+div{
+  padding:50%;
+  background:currentColor;
+}
