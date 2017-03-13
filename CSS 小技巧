@@ -1,0 +1,90 @@
+<---------------------------------1.  菜单按钮----------------------------->
+
+<div class='menu'></div>
+
+style{
+  实现方式1.    利用border-style:double的特性实现
+    .menu{
+      height:7px; width:60px;
+      border-top:21px double;   
+      border-bottom:7px solid;
+    }
+  实现方式2.    利用伪元素实现
+    .menu{
+      height:7px; width:60px;
+      background:green;
+      position:relative;
+    }
+    .menu::after,.menu::before{
+      height:7px; width:60px;
+      position:absolute; left:"";
+      content:"";
+    }
+    .menu::before{
+      top:-28px;
+      backgroud-color:red;
+    }
+    .menu::after{
+      top:-14px;
+      background-color:orange;
+    }
+  实现方式3.    利用padding 实现  (content-box 只在content区域上色)
+    .menu{
+       height:7px; width:60px;
+       padding:7px 0;
+       background-clip:content-box;
+       border-top:7px solid red;
+       background:orange;
+       border-bottom:7px solid green;
+    }
+}
+
+<---------------------------------2.  加号按钮----------------------------->
+
+<div class="add"></div>
+
+style{
+    1.传统伪类 和 background 实现 
+      .add{...}
+    2.利用伪类和 borde 特性实现 
+      .add{
+        height:40px; width:40px;
+        position:relative;
+        color:#ccc;
+        border:1px solid;
+      }
+      .add::before,.add:after{
+        content:"";
+        position:absolute;
+      }
+      .add::before{
+          border-left:4px solid;
+          height:20px;
+          left:18px; top:10px;
+       }
+       .add::after{
+          border-top:4px solid;
+          width:20px;
+          left:10px; top:18px;
+       }
+       .add:hover{
+          color:blue;
+       }
+}
+
+
+<---------------------------------3.  让背景图在右侧定位----------------------------->
+<div class='backImg'></div>
+
+style{
+  .backImg{
+      height:60px; width:200px;
+      border-right:30px solid transparent;
+      outline:1px solid;
+      background-image:url('...');
+      background-position:100% 20px;
+  }
+}
+
+
+<---------------------------------4.  用border制作三角形等图形----------------------------->
