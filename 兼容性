@@ -8,13 +8,3 @@ button 由于兼容性不强 一般用a标签来替代
 <label for='btn'> Join Us </lable>
 
 
-<---------------------------------2.  两列自适应等高布局----------------------------->
-
-.container{
-  overflow:hidden;
-}
-
-.left,.right{
-  padding-bottom:9999px;
-  margin-bottom:-9999px;
-}
