@@ -88,3 +88,18 @@ style{
 
 
 <---------------------------------4.  用border制作三角形等图形----------------------------->
+
+
+<---------------------------------5.  用padding 实现白眼效果----------------------------->
+
+<style>
+		div{
+			height: 100px;
+			width: 100px;
+			padding: 10px;
+			border: 10px solid;
+			background: currentColor;
+			background-clip: content-box;
+			border-radius: 50%;
+		}
+	</style>
