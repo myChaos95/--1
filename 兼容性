@@ -1,0 +1,20 @@
+
+<---------------------------------1.  BUTTON 替代----------------------------->
+
+button 由于兼容性不强 一般用a标签来替代
+但是在表单中，需要回车触发提交，所以需要用到button
+替代方案
+<button id='btn'></button>  将button 移除可视区域，但要点击效果有效（不能用display:hidden;）
+<label for='btn'> Join Us </lable>
+
+
+<---------------------------------2.  两列自适应等高布局----------------------------->
+
+.container{
+  overflow:hidden;
+}
+
+.left,.right{
+  padding-bottom:9999px;
+  margin-bottom:-9999px;
+}
