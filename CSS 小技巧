@@ -108,3 +108,54 @@ div{
   padding:50%;
   background:currentColor;
 }
+
+
+
+<---------------------------------7.  两列自适应等高布局----------------------------->
+一般只需要一边适应另外一边
+
+<div class='container'>
+	<div class='left'></div>
+	<div class='right'></div>
+</div>
+ 
+1.利用padding和margin实现	父元素 设置为 overflow:hidden 或 float 会撑起因为float子元素所失去的高度
+
+.container{
+  overflow:hidden;
+}
+
+.left,.right{
+  padding-bottom:9999px;
+  margin-bottom:-9999px;
+}
+
+
+2.利用border实现		（此处左边适应右边）
+.container{
+	border-left: 300px solid;
+}
+.left{
+	width: 300px;
+	float: left;
+	margin-left: -300px;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
