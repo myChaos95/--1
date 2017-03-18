@@ -1,0 +1,12 @@
+1. 单行文本居中
+.container{
+  line-height:30px;
+}
+
+2. 多行文本居中
+.container{
+  line-height:30px;
+}
+.box{
+  display:inline-block; vertical-align:middle; line-height:normal;
+}
