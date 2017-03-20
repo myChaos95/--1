@@ -33,6 +33,17 @@
 缺陷: .aside 不能BFC化
 
 加强版：
-.main{	float: left;width: 100%;}
-.content{margin-left: 350px;}
-.aside{width: 300px;  margin-left: -100%; display: inline-block;}
+.main{	float: left; width: 100%;}
+.content{margin-left: 310px;}
+.aside{
+	display: inline-block; width: 300px;
+	margin-left: -100%;	/*让元素紧贴在父元素左侧, margin, padding 百分比相对父元素宽度计算*/
+}
+
+
+
+
+
+
+
+
