@@ -1,0 +1,6 @@
+实现拖拽功能注意！！！
+
+若在document.onmousemove中没有设置
+e.preventDefault();
+e.returnValue = false;
+则将元素拖动到不可拖动区域松开鼠标时，不会执行document.onmouseup函数
