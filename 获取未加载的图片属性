@@ -1,0 +1,5 @@
+var img = new Image();
+img.onload = function(){
+  //  在此获取属性
+}
+img.src = '';
