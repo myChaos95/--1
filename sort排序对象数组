@@ -1,0 +1,13 @@
+1. 不分离
+arr.sort(function(a,b){
+  return a.index - b.index;     //   a - b 升序   b - a 降序
+})
+
+2. 分离
+function compare(property){
+  return function(a,b){
+    return a[property] - b[property];
+  }
+}
+
+arr.sort(compare('index'))
