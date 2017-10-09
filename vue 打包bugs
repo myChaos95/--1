@@ -1,3 +1,5 @@
 publicpath 不要用 './'  !!!!!
 
 和 router 的 base 写成一样 如 '/path/'
+
+刷新无效： 在服务器配置 参考 https://router.vuejs.org/zh-cn/essentials/history-mode.html;
