@@ -1,0 +1,3 @@
+publicpath 不要用 './'  !!!!!
+
+和 router 的 base 写成一样 如 '/path/'
