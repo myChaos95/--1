@@ -1,0 +1,5 @@
+canvas 截图：  可用 html2canvas 插件
+
+canvas 跨域：  把图片放在服务器上
+
+canvas 截取一部分为图片： 利用 getImageData , putImageData , toDataURL 来完成
