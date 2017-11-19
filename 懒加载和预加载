@@ -1,0 +1,69 @@
+参考： http://www.jianshu.com/p/4876a4fe7731
+
+
+1. 懒加载
+
+ -> 延迟加载，将img或者背景图片使用1px*1px的图片来代替（站位），当页面需要显示时再加载真正的图片;
+ 
+ 实现逻辑
+  
+    1 setTimeout 纯延迟加载  2 条件加载  3  可视区加载
+    
+ 优点
+ 
+    加载速度快，减少了服务器压力。
+    
+
+2. 预加载
+
+  -> 提前加载图片
+  
+实现逻辑
+
+    在加载较快的页面提前加载后续会用到的图片  1. css  2.js   3. ajax
+    
+优点
+  
+    优化了速度，但是提高了服务器压力
+    
+    
+    
+3. 补充知识
+
+    (1) 屏幕可视窗口大小
+        
+        window.innerHeight | 标准浏览器及IE9+
+       
+        document.documentElement.clientHeight | 标准浏览器及IE低版本标准模式
+        
+        document.body.clientHeight | 低版本混杂模式
+        
+        $(window).height()
+      
+    (2) 滚动高度
+    
+        window.pageYOffset | 标准浏览器及IE9+
+        
+        document.documentElement.scrollTop 兼容IE低版本的标准模式
+        
+        document.body.scrollTop 兼容混杂模式
+        
+        $(document).scrollTop()
+        
+     (3) 获得尺寸
+     
+         getComputedStyle || currentStyle
+         
+     (4) 元素位置信息
+     
+        $(o).offset().top
+        
+        $(o).offset().left
+        
+        $(o).position().top
+        
+        $(o).position().left
+    
+    
+ 
+    
