@@ -1,0 +1,5 @@
+a href = '#id'
+
+如果需要平滑滚动
+
+给需要滚动的元素 添加 css （ scroll-behavior: smooth;  ）

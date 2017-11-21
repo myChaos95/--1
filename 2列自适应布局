@@ -1,0 +1,63 @@
+1. 不要求重要内容先渲染
+<div class="container">
+		<div class="aside"></div>
+		<div class="main"></div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ut, debitis dignissimos eum maiores ad aperiam doloribus esse aspernatur! Dolorem, illo, voluptatibus. Ipsam porro quae, neque nam tempora amet quam!</p>
+</div>
+
+（1）float + margin-left
+
+.aside{float: left;width: 300px;}
+.main{margin-left: 310px;}
+缺陷: 调整左侧宽度时,也需要对右侧的margin-left进行调整;
+
+（2）float + BFC （BFC 不会与float发生重叠）
+
+.aside{float: left;width: 300px; margin-right: 10px;}
+.main{overflow: auto;}
+
+2. 要求重要内容先渲染
+
+<div class="container">
+		<div class="main">
+			<div class="content"></div>
+		</div>
+		<div class="aside"></div>
+</div>
+
+（1）float + margin-left
+
+.main{	float: left;width: 100%;}
+.content{margin-left: 350px;}
+.aside{width: 300px;}
+缺陷: .aside 不能BFC化
+
+加强版：
+.main{	float: left; width: 100%;}
+.content{margin-left: 310px;}
+.aside{
+	display: inline-block; width: 300px;
+	margin-left: -100%;	/*让元素紧贴在父元素左侧, margin, padding 百分比相对父元素宽度计算*/
+}
+
+<!--------------------------------右侧固定，左自适应----------------------------------->
+.main{float: left; width: 100%;}
+.content{margin-right: 350px;}
+.aside{display: inline-block; margin-left: -301px; width: 300px;} /* margin-left 至少要比 width 大 1像素 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
