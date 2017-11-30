@@ -1,0 +1,9 @@
+1. function getMax(arr){
+  var max = undefined;
+  for(let i = 0, len = arr.length; i < len; i++){
+    max = max === undefined ? arr[i] : (max > arr[i] ? max : arr[i]);
+  }
+  return max;
+}
+
+getMax(arr) === Math.max(...arr)
