@@ -1,0 +1,15 @@
+1. getter setter
+
+var person = {
+  p_name: 'zhou',
+  get name(){
+    return this._pname
+  },
+  set name(name){
+    this.p_name = name
+  }
+}
+
+2. js 的对象不相等 
+
+  {x: 1} == {x: 1}   =>  false
