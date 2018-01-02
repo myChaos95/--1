@@ -5,3 +5,9 @@
 3. 路由器 => koa-route || koa-router
 
 4. post 请求解析 => koa-body || koa-bodyparser
+
+5. 静态文件 => koa-static
+
+6. 认证  =>  koa-passport
+
+7. mongodb  =>  mongoose
