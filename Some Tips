@@ -1,0 +1,31 @@
+  1.  随机字符串 => Math.random().toString(32);
+  
+  2.  mongo 数组操作  =>  
+        添加  =>  db.users.update({name: 'zhou'}, {$push: {array: 'one'}})
+        删除  =>  db.users.update({name: 'zhou'}, {$pull: {array: 'one'}})
+       
+  3.  安卓和ios的判断   =>   
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  
+  4.  浅拷贝   =>
+        Array.slice()  &  Array.concat()  &  Object.assign()
+      深拷贝   =>
+        JSON.parse( JSON.stringify( value ) )
+  
+  5.  WebSocket (socket.io)  =>  
+        房间操作  socket.join( room )   &   socket.leave( room )
+        消息操作  io.emit( 'event', data )   &   io.on( 'event', data )   &    io.to( room || socket.id ).emit( 'event', data )
+  
+  6.  快速创建数组  =>  
+        (1) new Array( N ).fill( M )
+        (2) Array.from( new Array( N ), ( val, index ) => val = index )
+  
+  7.  数组去重  =>  
+        (1) return [...new Set( arr )];
+  
+  8.  集合的实现  =>  
+        (1) 并集  =>  return new Set( [ ...arr_a, ...arr_b ] )
+        (2) 交集  =>  return new Set( arr_a.filter( ele => new Set( arr_b ).has( ele )) )
+        (3) 差集  =>  return new Set( arr_a.filter( ele => !new Set( arr_b ).has( ele )) )
