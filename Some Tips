@@ -29,3 +29,7 @@
         (1) 并集  =>  return new Set( [ ...arr_a, ...arr_b ] )
         (2) 交集  =>  return new Set( arr_a.filter( ele => new Set( arr_b ).has( ele )) )
         (3) 差集  =>  return new Set( arr_a.filter( ele => !new Set( arr_b ).has( ele )) )
+        
+  9.  mysql 复制表 =>  a to b
+        (1) =>  show create table a;  复制 & create table b;  insert into b (id...) select id... from a;
+        (2) =>  create table b like a;  insert into b select * from a;
