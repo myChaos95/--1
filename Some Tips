@@ -36,3 +36,5 @@
         (3) 复制部分columns & 改名 =>  create table users_copy as ( select id as b_id,name from users )
         (4) 复制部分值 & 条件 =>  insert into b select id,name from a where age >= 18;
         (5) 复制的同时定义字段 => create table (b_id int auto_increment primary key) as select * from a;
+   
+  10. openssl   =>   https://my.oschina.net/fenying/blog/786238
